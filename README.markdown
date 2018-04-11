@@ -1,7 +1,7 @@
 Name
 ====
 
-openresty-gdb-utils - GDB Utilities for OpenResty (including Nginx, ngx\_lua, LuaJIT, and more)
+**libmtev-gdb-utils** - GDB Utilities for LuaJIT with [libmtev](https://github.com/circonus-labs/libmtev) (Forked from [OpenResty](https://github.com/openresty/openresty-gdb-utils))
 
 Table of Contents
 =================
