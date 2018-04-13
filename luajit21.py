@@ -14,6 +14,7 @@ except ModuleNotFoundError:
     import_relative()
     import gdbutils
 import ngxlua
+import mtevlua
 import re
 import time
 
@@ -123,6 +124,10 @@ def get_global_L():
     gL, _ = gdb.lookup_symbol("globalL")
     if gL:
         return gL.value()
+
+    mtev_lua_states = mtevlua.mtev_L("mtev_lua_states")
+    if mtev_lua_states:
+        return mtev_lua_states[0]
 
     cycle = gdb.lookup_global_symbol("ngx_cycle")
     if cycle:
