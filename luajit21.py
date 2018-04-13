@@ -1,7 +1,18 @@
 import sys
 
+def import_relative():
+    from os import path
+    moddir = path.expanduser(__file__)
+    moddir = path.abspath(moddir)
+    moddir = path.dirname(moddir)
+    sys.path.append(moddir)
+
 import gdb
-import gdbutils
+try:
+    import gdbutils
+except ModuleNotFoundError:
+    import_relative()
+    import gdbutils
 import ngxlua
 import re
 import time
