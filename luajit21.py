@@ -10,7 +10,7 @@ def import_relative():
 import gdb
 try:
     import gdbutils
-except ModuleNotFoundError:
+except ImportError:
     import_relative()
     import gdbutils
 import ngxlua
